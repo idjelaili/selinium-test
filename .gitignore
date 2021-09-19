@@ -1,0 +1,6 @@
+deploy.zip
+layer.zip
+tmp/*
+__pycache__
+.DS_Store
+bin/chromium
