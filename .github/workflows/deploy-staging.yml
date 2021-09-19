@@ -20,11 +20,11 @@ jobs:
         sudo apt-get update
         sudo apt-get install libssl-dev libcurl4-openssl-dev python-dev python3-setuptools python3-wheel python3-testresources
         pip install wheel
-    - name: init env
-      run: |
-          bash ./scripts/init_env.sh staging
-      env:
-        CONF: staging
+    # - name: init env
+    #   run: |
+    #       bash ./scripts/init_env.sh staging
+    #   env:
+    #     CONF: staging
 
     - name: deploy service
       run: |
