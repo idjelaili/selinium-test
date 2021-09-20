@@ -23,7 +23,7 @@ lambda-layer-build: clean
 	cd layer/bin; sudo unzip -u ../../chromium.zip 
 	sudo pip3 install -r requirements.txt -t layer/python
 	sudo cd layer; sudo zip -9qr layer.zip .
-	sudo cp layer/layer.zip .
+	cp layer/layer.zip .
 	sudo rm -rf layer
 
 ## prepares deploy.zip archive for AWS Lambda Function deploy 
@@ -31,7 +31,7 @@ lambda-function-build: clean
 	sudo rm -f deploy.zip
 	sudo mkdir deploy 
 	sudo cp -r src deploy/.
-	sudo cd deploy; sudo  zip -9qr deploy.zip .
+	cd deploy; sudo  zip -9qr deploy.zip .
 	sudo cp deploy/deploy.zip .
 	sudo rm -rf deploy
 
