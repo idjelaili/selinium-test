@@ -5,7 +5,7 @@ clean:		## delete pycache, build files
 
 ## create Docker image with requirements
 docker-build:	
-	sudo cd bin; unzip -u ../chromium.zip 	
+	sudo cd bin; sudo unzip -u ../chromium.zip 	
 	sudo docker-compose build
 	sudo rm -f bin/chromium
 
