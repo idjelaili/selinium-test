@@ -33,7 +33,7 @@ jobs:
           aws s3 cp layer.zip s3://selinium-test-bucket/src/SeleniumChromiumLayer.zip
 	        aws s3 cp deploy.zip s3://selinium-test-bucket/src/ScreenshotFunction.zip
 	        aws cloudformation create-stack --stack-name LambdaScreenshot --template-body file://cloud.yaml --parameters ParameterKey=BucketName,ParameterValue=selinium-test-bucket --capabilities CAPABILITY_IAM
-          # make BUCKET=selinium-test-bucket create-stack     
+             
       env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
                 AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
