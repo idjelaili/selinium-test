@@ -30,7 +30,10 @@ jobs:
       run: |
           make lambda-layer-build
           make lambda-function-build
-          make BUCKET=selinium-test-bucket create-stack     
+          sudo aws s3 cp layer.zip s3://${BUCKET}/src/SeleniumChromiumLayer.zip
+	        sudo aws s3 cp deploy.zip s3://${BUCKET}/src/ScreenshotFunction.zip
+	        sudo aws cloudformation create-stack --stack-name LambdaScreenshot --template-body file://cloud.yaml --parameters ParameterKey=BucketName,ParameterValue=selinium-test-bucket --capabilities CAPABILITY_IAM
+          # make BUCKET=selinium-test-bucket create-stack     
       env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
                 AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
