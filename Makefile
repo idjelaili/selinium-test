@@ -22,7 +22,7 @@ lambda-layer-build: clean
 	sudo cp -r bin layer/.
 	cd layer/bin; sudo unzip -u ../../chromium.zip 
 	sudo pip3 install -r requirements.txt -t layer/python
-	sudo cd layer; sudo zip -9qr layer.zip .
+	cd layer; sudo zip -9qr layer.zip .
 	cp layer/layer.zip .
 	sudo rm -rf layer
 
