@@ -20,9 +20,9 @@ lambda-layer-build: clean
 	sudo rm -f layer.zip
 	sudo mkdir layer layer/python
 	sudo cp -r bin layer/.
-	sudo cd layer/bin; unzip -u ../../chromium.zip 
+	sudo cd layer/bin; sudo unzip -u ../../chromium.zip 
 	sudo pip3 install -r requirements.txt -t layer/python
-	sudo cd layer; zip -9qr layer.zip .
+	sudo cd layer; sudo zip -9qr layer.zip .
 	sudo cp layer/layer.zip .
 	sudo rm -rf layer
 
@@ -31,7 +31,7 @@ lambda-function-build: clean
 	sudo rm -f deploy.zip
 	sudo mkdir deploy 
 	sudo cp -r src deploy/.
-	sudo cd deploy; zip -9qr deploy.zip .
+	sudo cd deploy; sudo  zip -9qr deploy.zip .
 	sudo cp deploy/deploy.zip .
 	sudo rm -rf deploy
 
