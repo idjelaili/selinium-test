@@ -5,7 +5,7 @@ clean:		## delete pycache, build files
 
 ## create Docker image with requirements
 docker-build:	
-	sudo cd bin; sudo unzip -u ../chromium.zip 	
+	cd bin; sudo unzip -u ../chromium.zip 	
 	sudo docker-compose build
 	sudo rm -f bin/chromium
 
@@ -20,7 +20,7 @@ lambda-layer-build: clean
 	sudo rm -f layer.zip
 	sudo mkdir layer layer/python
 	sudo cp -r bin layer/.
-	sudo cd layer/bin; sudo unzip -u ../../chromium.zip 
+	cd layer/bin; sudo unzip -u ../../chromium.zip 
 	sudo pip3 install -r requirements.txt -t layer/python
 	sudo cd layer; sudo zip -9qr layer.zip .
 	sudo cp layer/layer.zip .
