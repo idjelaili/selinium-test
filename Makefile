@@ -21,7 +21,7 @@ lambda-layer-build: clean
 	mkdir layer layer/python
 	cp -r bin layer/.
 	cd layer/bin; unzip -u ../../chromium.zip 
-	pip3 install -r requirements.txt -t layer/python
+	sudo pip3 install -r requirements.txt -t layer/python
 	cd layer; zip -9qr layer.zip .
 	cp layer/layer.zip .
 	rm -rf layer
